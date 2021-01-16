@@ -143,7 +143,7 @@ fn lookup_bet(state: &Rc<RefCell<State>>) {
                     },
 
                     Mode::Exhibitions => {
-                        Bet::Left(1.0)
+                        Bet::Right(5.0)
                     },
                 };
 
