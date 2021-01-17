@@ -12,9 +12,19 @@ pub const MATCHMAKING_STRATEGY: CustomStrategy = CustomStrategy {
     scale_by_matches: true,
     scale_by_money: true,
     scale_by_time: None,
+    money: MoneyStrategy::UpsetsElo { max_bet: FIXED_BET_AMOUNT },
+    bet: BetStrategy::ExpectedProfit,
+};
+
+/*pub const MATCHMAKING_STRATEGY: CustomStrategy = CustomStrategy {
+    average_sums: false,
+    round_to_magnitude: false,
+    scale_by_matches: true,
+    scale_by_money: true,
+    scale_by_time: None,
     money: MoneyStrategy::Matchmaking { max_bet: FIXED_BET_AMOUNT },
     bet: BetStrategy::Matchmaking,
-};
+};*/
 
 /*const MATCHMAKING_STRATEGY: EarningsStrategy = EarningsStrategy {
     expected_profit: true,
