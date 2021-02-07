@@ -7,24 +7,14 @@ use crate::simulation::{Bet, Simulator, Strategy, lookup, SALT_MINE_AMOUNT, TOUR
 //const MATCHMAKING_STRATEGY: RandomStrategy = RandomStrategy::Left;
 
 pub const MATCHMAKING_STRATEGY: CustomStrategy = CustomStrategy {
-    average_sums: false,
+    average_sums: true,
     round_to_magnitude: false,
-    scale_by_matches: true,
+    scale_by_matches: false,
     scale_by_money: true,
     scale_by_time: None,
     money: MoneyStrategy::UpsetsElo { max_bet: FIXED_BET_AMOUNT },
-    bet: BetStrategy::ExpectedProfit,
+    bet: BetStrategy::ExpectedBet,
 };
-
-/*pub const MATCHMAKING_STRATEGY: CustomStrategy = CustomStrategy {
-    average_sums: false,
-    round_to_magnitude: false,
-    scale_by_matches: true,
-    scale_by_money: true,
-    scale_by_time: None,
-    money: MoneyStrategy::Matchmaking { max_bet: FIXED_BET_AMOUNT },
-    bet: BetStrategy::Matchmaking,
-};*/
 
 /*const MATCHMAKING_STRATEGY: EarningsStrategy = EarningsStrategy {
     expected_profit: true,
@@ -66,7 +56,7 @@ impl Permutate for bool {
 
 
 pub const PERCENTAGE_THRESHOLD: f64 = SALT_MINE_AMOUNT * 100.0;
-pub const FIXED_BET_AMOUNT: f64 = 32_000.0;
+pub const FIXED_BET_AMOUNT: f64 = 64_000.0;
 const MINIMUM_MATCHES_MATCHMAKING: f64 = 5.0;   // minimum match data before it starts betting
 const MAXIMUM_MATCHES_MATCHMAKING: f64 = 50.0;  // maximum match data before it reaches the MAXIMUM_BET_PERCENTAGE
 const MAXIMUM_WEIGHT: f64 = 10.0;               // maximum percentage for the weight

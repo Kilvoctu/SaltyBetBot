@@ -17,7 +17,7 @@ use web_sys::{HtmlInputElement, HtmlSelectElement};
 use wasm_bindgen::prelude::*;
 
 
-const DEFAULT_DAYS_SHOWN: u32 = 365;
+const DEFAULT_DAYS_SHOWN: u32 = 90;
 
 const MATCHMAKING_STARTING_MONEY: f64 = 10_000_000.0;
 
